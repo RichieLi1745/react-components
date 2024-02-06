@@ -6,6 +6,13 @@ const App = () => (
     <GroceryList items={['Apples', 'Bananas']} />
   </div>
 );
+const GroceryList = (groceryList) => (
+  <ul>
+    {groceryList.items.map((item) => (
+      <GroceryListItem  item={item} />
+    ))}
+  </ul>
+);
 //const GroceryListItem = (groceryList) => <li>{groceryList.item}</li>;
 const GroceryListItem = (groceryList) => {
   const [grocery, setGrocery] = useState(false);
@@ -20,13 +27,7 @@ const GroceryListItem = (groceryList) => {
     </li>
   );
 };
-const GroceryList = (groceryList) => (
-  <ul>
-    {groceryList.items.map((item) => (
-      <GroceryListItem  item={item} />
-    ))}
-  </ul>
-);
+
 /*ReactDOM.render(
   <App />,
   document.getElementById('app')
